@@ -28,17 +28,17 @@ export default function Hero() {
     return (
         <section
             ref={containerRef}
-            className="relative flex min-h-[100dvh] w-full flex-col justify-center overflow-hidden pt-32 pb-12 sm:pb-24 lg:pb-32"
+            className="relative flex min-h-[90vh] lg:min-h-[80vh] max-h-[900px] 2xl:max-h-[1000px] w-full flex-col justify-center overflow-hidden pt-32 pb-12 sm:pb-24 lg:pb-32"
         >
             {/* Background Image - User Uploaded Sky */}
             <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-[20s] ease-out"
+                className="absolute inset-0 z-0 bg-cover bg-[center_top] bg-no-repeat transition-transform duration-[20s] ease-out"
                 style={{ backgroundImage: 'url("/images/hero-bg.png")' }}
             />
             {/* Soft Light Overlay to ensure text readability */}
             <div className="absolute inset-0 z-0 bg-white/30 backdrop-blur-[2px]" />
-            {/* Gradient to transition into the next dark section */}
-            <div className="absolute inset-x-0 bottom-0 h-32 z-0 bg-gradient-to-t from-background to-transparent" />
+            {/* Gradient to transition into the next section */}
+            <div className="absolute inset-x-0 bottom-0 h-32 z-0 bg-gradient-to-t from-white to-transparent" />
 
             {/* Content */}
             <div className="relative z-10 w-full px-6 sm:px-8 md:px-12 lg:px-24">
@@ -51,12 +51,12 @@ export default function Hero() {
                         Elite AI Automation Agency
                     </div>
 
-                    <h1 className="reveal-text text-xl md:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-[1.2] mb-4 sm:mb-6 max-w-3xl">
-                        Stop scaling headcount. Start scaling systems. We engineer bespoke AI architectures that automate your most complex workflows, running your operations on autopilot so you can focus on growth.
+                    <h1 className="reveal-text text-[clamp(3rem,6vw,5rem)] font-bold tracking-tighter text-slate-900 leading-[1.05] mb-6 max-w-4xl">
+                        Stop scaling headcount.<br className="hidden sm:block" /> Start scaling systems.
                     </h1>
 
-                    <h2 className="reveal-text font-serif text-[clamp(2rem,6vw,5.5rem)] italic font-light tracking-tight text-slate-900 leading-[1.05] drop-shadow-sm mb-10 max-w-4xl pr-4">
-                        Building enterprise grade custom AI Automations that increase revenue, reduce costs, and save time.
+                    <h2 className="reveal-text text-lg sm:text-xl md:text-2xl text-slate-800 leading-relaxed max-w-2xl mb-10 font-medium">
+                        We engineer bespoke AI architectures that automate your most complex workflows, running your operations on autopilot so you can focus on growth.
                     </h2>
 
                     <div className="reveal-text mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">

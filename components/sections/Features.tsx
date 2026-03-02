@@ -27,7 +27,7 @@ export default function Features() {
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: containerRef.current,
-                        start: "top 80%",
+                        start: "top 10%",
                     },
                 }
             );
@@ -43,18 +43,56 @@ export default function Features() {
                     }
                 }
             );
+
+            // Background color transition (Light to Dark)
+            gsap.to(".features-bg-dark", {
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 35%",
+                    end: "top 0%",
+                    scrub: true,
+                }
+            });
+
+            // Text color transition for the header
+            gsap.to(".features-header-text", {
+                color: "#f8fafc", // slate-50
+                ease: "none",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 35%",
+                    end: "top 0%",
+                    scrub: true,
+                }
+            });
+
+            gsap.to(".features-subheader-text", {
+                color: "rgba(248, 250, 252, 0.7)",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 35%",
+                    end: "top 0%",
+                    scrub: true,
+                }
+            });
         }, containerRef);
         return () => ctx.revert();
     }, []);
 
     return (
-        <section ref={containerRef} id="services" className="relative w-full py-24 sm:py-32 lg:py-40 z-10 bg-background/50 backdrop-blur-3xl">
-            <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
+        <section ref={containerRef} id="services" className="relative w-full py-24 sm:py-32 lg:py-40 z-10 bg-white">
+            {/* The dark background overlay that fades in on scroll */}
+            <div className="features-bg-dark absolute inset-0 bg-background z-0" style={{ opacity: 0 }} />
+
+            <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-24">
                 <div className="mb-24 max-w-3xl feature-header">
-                    <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight text-surface leading-[1.1] mb-6">
-                        The Live <span className="font-serif italic font-light text-white/90">Operations</span> Dashboard.
+                    <h2 className="features-header-text text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
+                        The Live <span className="font-serif italic font-light opacity-90">Operations</span> Dashboard.
                     </h2>
-                    <p className="text-xl text-surface/70 leading-relaxed max-w-2xl">
+                    <p className="features-subheader-text text-xl text-slate-700 leading-relaxed max-w-2xl text-balance">
                         We don&apos;t just build APIs and basic bots. We deploy an ecosystem of intelligent, interconnected agents tailored to your business operations.
                     </p>
                 </div>

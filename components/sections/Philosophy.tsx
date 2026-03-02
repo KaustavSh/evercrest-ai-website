@@ -70,7 +70,7 @@ export default function Philosophy() {
                 <div className="phil-trigger-1 mb-8 md:mb-16">
                     <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-bold tracking-tighter leading-[1.1] flex flex-wrap justify-center gap-x-4 gap-y-2">
                         {text1.map((word, i) => (
-                            <span key={i} className="phil-word-1 inline-block text-[hsl(var(--surface-foreground))] pb-2" style={{ perspective: "1000px" }}>
+                            <span key={i} className="phil-word-1 inline-block text-[hsl(var(--surface-foreground))] pb-2 transition-transform duration-300 hover:-translate-y-1 hover:scale-105 hover:text-slate-600 cursor-default" style={{ perspective: "1000px" }}>
                                 {word}
                             </span>
                         ))}
@@ -80,7 +80,7 @@ export default function Philosophy() {
                 <div className="phil-trigger-2">
                     <h2 className="font-serif italic text-[clamp(2.5rem,8vw,6.5rem)] tracking-tight text-[hsl(var(--accent))] flex flex-wrap justify-center gap-x-6 gap-y-2 drop-shadow-[0_10px_30px_rgba(212,175,55,0.2)]">
                         {text2.map((word, i) => (
-                            <span key={i} className="phil-word-2 inline-block pb-4">{word}</span>
+                            <span key={i} className="phil-word-2 inline-block pb-4 transition-all duration-300 hover:-translate-y-3 hover:scale-110 hover:brightness-125 hover:drop-shadow-[0_20px_40px_rgba(212,175,55,0.6)] cursor-default">{word}</span>
                         ))}
                     </h2>
                 </div>
