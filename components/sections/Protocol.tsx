@@ -45,17 +45,26 @@ const PROTOCOLS = [
                     animate={{ y: ["-100%", "300%"] }}
                     transition={{ duration: 2.5, ease: "easeIn", repeat: Infinity, repeatType: "mirror" }}
                 />
-                {/* Abstract code representation */}
+                {/* Abstract code representation — static widths to avoid hydration mismatch */}
                 <div className="absolute inset-6 flex flex-col gap-3 opacity-30">
-                    {Array.from({ length: 8 }).map((_, i) => (
+                    {[
+                        { accent: 38, white: 25 },
+                        { accent: 52, white: 18 },
+                        { accent: 28, white: 35 },
+                        { accent: 45, white: 22 },
+                        { accent: 33, white: 30 },
+                        { accent: 55, white: 15 },
+                        { accent: 40, white: 28 },
+                        { accent: 24, white: 20 },
+                    ].map((w, i) => (
                         <div key={i} className="flex gap-2">
                             <div
                                 className="h-2 rounded-full bg-accent/80"
-                                style={{ width: `${Math.random() * 40 + 20}%` }}
+                                style={{ width: `${w.accent}%` }}
                             />
                             <div
                                 className="h-2 rounded-full bg-white/40"
-                                style={{ width: `${Math.random() * 30 + 10}%` }}
+                                style={{ width: `${w.white}%` }}
                             />
                         </div>
                     ))}
